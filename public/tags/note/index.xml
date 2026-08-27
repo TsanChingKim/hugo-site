@@ -10,7 +10,7 @@
     <lastBuildDate>Thu, 27 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tsanchingkim.github.io/hugo-site/tags/note/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Chapter-1 变量</title>
+      <title>Chapter-1 基本数据类型</title>
       <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-1/</link>
       <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
       
@@ -35,6 +35,16 @@
       <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-3/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Chapter-4 运算符</title>
+      <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-4/</link>
+      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-4/</guid>
       <description></description>
       
     </item>

@@ -15,6 +15,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://tsanchingkim.github.io/hugo-site/q-a/2026-8-27/</loc>
+    <lastmod>2026-08-27T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-1/</loc>
     <lastmod>2026-08-27T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -28,6 +34,12 @@
   </url>
   <url>
     <loc>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-3/</loc>
+    <lastmod>2026-08-27T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-4/</loc>
     <lastmod>2026-08-27T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
