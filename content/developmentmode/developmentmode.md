@@ -2,7 +2,7 @@
 title: "2026-8-24"
 date: 2026-08-27
 description: "看代码过程中踩过的坑"
-tags: ["c++", "code review"]
+tags: ["code review", "c++"]
 showTableOfContents: false
 ---
 
