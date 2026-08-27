@@ -3,7 +3,7 @@ title: "Chapter-3 标识符和关键字"
 date: 2026-08-27
 description: "详细介绍了c++中的标识符和关键字相关的内容"
 tags: ["c++", "note"]
-showTableOfContents: false
+showTableOfContents: true
 ---
 
 在程序中，我们需要给变量、函数、类等起名字，这些名字就是**标识符**；而关键字则是 C++ 语言规定好的、具有特殊含义的单词，不能挪作他用。两者紧密相关，但必须区分清楚。
