@@ -80,7 +80,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 [article]
   showDate = true
   showViews = true
-  showLikes = true
+  showLikes = false
   showDateOnlyInArticle = false
   showDateUpdated = false
   showAuthor = true
@@ -142,7 +142,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
   showViews = true
-  showLikes = true
+  showLikes = false
   showTableOfContents = false
   cardView = true
 
@@ -153,7 +153,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
   showViews = true
-  showLikes = true
+  showLikes = false
   showTableOfContents = true
   groupByYear = false
   cardView = false
