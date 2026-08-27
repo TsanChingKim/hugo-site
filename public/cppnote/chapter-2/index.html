@@ -1,0 +1,945 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>Chapter-2 变量 &middot; Blowfish</title>
+    <meta name="title" content="Chapter-2 变量 &middot; Blowfish">
+  
+
+  
+  
+  
+  
+  
+    
+  
+    
+  
+    
+  
+  
+    <meta name="description" content="讲解了c&#43;&#43;中变量相关的内容">
+  
+  
+    <meta name="keywords" content="c&#43;&#43;,note,">
+  
+  
+  
+  <link rel="canonical" href="https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/">
+  
+  
+
+  
+  
+  
+
+  
+  <meta property="og:url" content="https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/">
+	<meta property="og:site_name" content="Blowfish">
+	<meta property="og:title" content="Chapter-2 变量">
+	<meta property="og:description" content="讲解了c&#43;&#43;中变量相关的内容">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="cppnote">
+		<meta property="article:published_time" content="2026-08-27T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-08-27T00:00:00+00:00">
+		<meta property="article:tag" content="C&#43;&#43;">
+		<meta property="article:tag" content="Note">
+
+  
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Chapter-2 变量">
+	<meta name="twitter:description" content="讲解了c&#43;&#43;中变量相关的内容">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/hugo-site/css/main.bundle.min.109d05baab980c4b552cffcf3c585559d3979bc7da97727e30e07886dec2dffbcf308e213e7e92a19c9c1641392f2901de07dcd784b311ec17dfaa88200741d9.css"
+    integrity="sha512-EJ0FuquYDEtVLP/PPFhVWdOXm8fal3J&#43;MOB4ht7C3/vPMI4hPn6SoZycFkE5LykB3gfc14SzEewX36qIIAdB2Q==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/hugo-site/js/appearance.min.764f412f07ea715415e9123a5eb5f355429502d0b760146b9bcab854bc50829dee14488594acd935dfcdc6a0fe7e6d14d7bee914ebb9272b251aa238cb52c4dd.js"
+    integrity="sha512-dk9BLwfqcVQV6RI6XrXzVUKVAtC3YBRrm8q4VLxQgp3uFEiFlKzZNd/NxqD&#43;fm0U177pFOu5JyslGqI4y1LE3Q=="></script>
+  
+
+
+  
+  
+  
+  
+  
+  
+    
+    <script defer src="/hugo-site/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+    
+    <script defer src="/hugo-site/js/medium-zoom.67b71ecf7eecce38673a92244d1ffd93edb5f1aeedd12e725d0f67fe901828fa3562f6a6d64ad290b36b7d7034b8ea16e63486d75d957bcf6a2732923e5d46e6.js" integrity="sha512-Z7cez37szjhnOpIkTR/9k&#43;218a7t0S5yXQ9n/pAYKPo1Yvam1krSkLNrfXA0uOoW5jSG112Ve89qJzKSPl1G5g=="></script>
+  
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/hugo-site/js/main.bundle.min.221b84d3b2e59e5c6a90e4478bf70f9b4fe7739e6f4ac7e3428a46067c88dc7cf4a338690c89753c16aa0600fbc156125f6f2ce34a9aa300dcc7a367f3e90e9e.js"
+      integrity="sha512-IhuE07LlnlxqkORHi/cPm0/nc55vSsfjQopGBnyI3Hz0ozhpDIl1PBaqBgD7wVYSX28s40qaowDcx6Nn8&#43;kOng=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/hugo-site/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/hugo-site/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/hugo-site/favicon-16x16.png">
+    <link rel="manifest" href="/hugo-site/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Cppnotes",
+    "name": "Chapter-2 变量",
+    "headline": "Chapter-2 变量",
+    "description": "讲解了c\u002b\u002b中变量相关的内容",
+    "inLanguage": "en",
+    "url" : "https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    "copyrightYear": "2026",
+    "dateCreated": "2026-08-27T00:00:00\u002b00:00",
+    "datePublished": "2026-08-27T00:00:00\u002b00:00",
+    
+    "dateModified": "2026-08-27T00:00:00\u002b00:00",
+    
+    "keywords": ["c++","note"],
+    
+    "mainEntityOfPage": "https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/",
+    "wordCount":  326 
+  }]
+  </script>
+
+
+
+  
+  
+    
+
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral bf-scrollbar">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    <header>
+      
+      
+        <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
+  
+  
+    <a href="/hugo-site/" class="text-base font-medium truncate min-w-0 shrink">
+      Blowfish
+    </a>
+  
+  <div class="flex items-center ms-auto">
+    <div class="hidden md:flex">
+      <nav aria-label="Main menu" class="flex items-center gap-x-5 h-12">
+  
+
+  
+
+  
+
+  
+    <div class="flex items-center">
+      <button
+        id="appearance-switcher"
+        aria-label="Switch to dark appearance"
+        type="button"
+        class="text-sm bf-icon-color-hover"
+        title="Switch to dark appearance">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    </div>
+  
+
+  
+    <button
+      id="search-button"
+      aria-label="Search (/ or ⌘K)"
+      class="flex items-center gap-2 rounded-lg border bf-border-color bf-border-color-hover bg-neutral-100/50 px-2 py-1 text-sm text-neutral-500 transition-colors hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral-400 dark:hover:text-primary-400"
+      title="Search (/ or ⌘K)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      <kbd
+        id="search-shortcut-hint"
+        class="pointer-events-none font-sans text-xs text-neutral-500 dark:text-neutral-400"
+        aria-hidden="true">
+        ⌘K
+      </kbd>
+    </button>
+  
+</nav>
+
+
+
+    </div>
+    <div class="flex md:hidden">
+      
+<div class="mobile-header-row mobile-menu-fullscreen relative flex items-center h-14 gap-4">
+  
+    
+
+  
+
+  
+    <button
+      id="appearance-switcher-mobile"
+      type="button"
+      aria-label="Switch to dark appearance"
+      title="Switch to dark appearance"
+      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
+      <div class="dark:hidden">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+      </div>
+      <div class="hidden dark:block">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+      </div>
+    </button>
+  
+
+  
+    <button
+      id="search-button-mobile"
+      aria-label="Search (/ or ⌘K)"
+      class="flex items-center justify-center bf-icon-color-hover"
+      title="Search (/ or ⌘K)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+      
+    </header>
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  
+  
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Chapter-2 变量
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2026-08-27T00:00:00&#43;00:00">27 August 2026</time><span class="px-2 text-primary-500">&middot;</span><span>326 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+      
+      
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+    
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h2 class="relative group">一、变量（Variable）
+    <div id="一变量variable" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%b8%80%e5%8f%98%e9%87%8fvariable" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>变量是程序中用于存储数据的命名内存区域。你可以把变量想象成一个“盒子”，里面可以存放不同类型的值，比如整数、小数、字符等。变量的值在程序运行期间可以改变。</p>
+
+<h3 class="relative group">1. 变量的声明与初始化
+    <div id="1-变量的声明与初始化" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#1-%e5%8f%98%e9%87%8f%e7%9a%84%e5%a3%b0%e6%98%8e%e4%b8%8e%e5%88%9d%e5%a7%8b%e5%8c%96" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>在 C++ 中，声明变量的基本语法是：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">数据类型 变量名;</span></span></code></pre></div></div>
+<p>例如：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">age</span><span class="p">;</span>          <span class="c1">// 声明一个 int 类型的变量 age
+</span></span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">salary</span><span class="p">;</span>    <span class="c1">// 声明一个 double 类型的变量 salary
+</span></span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">grade</span><span class="p">;</span>       <span class="c1">// 声明一个 char 类型的变量 grade
+</span></span></span></code></pre></div></div>
+<p>声明后，变量还没有确定的值（如果是局部变量，其内容是不确定的）。通常我们会在声明的同时进行初始化：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">数据类型 变量名 = 初始值;</span></span></code></pre></div></div>
+<p>或者使用 C++11 引入的列表初始化（大括号初始化）：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>        <span class="c1">// 传统初始化
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">count</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>       <span class="c1">// 列表初始化
+</span></span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">letter</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">isReady</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span></span></span></code></pre></div></div>
+<p>列表初始化更安全，能防止窄化转换（例如把 <code>double</code> 赋给 <code>int</code> 时发生精度丢失）。</p>
+
+<h3 class="relative group">2. 变量的类型
+    <div id="2-变量的类型" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#2-%e5%8f%98%e9%87%8f%e7%9a%84%e7%b1%bb%e5%9e%8b" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>C++ 提供了丰富的基础数据类型：</p>
+<ul>
+<li><strong>整型</strong>：<code>int</code>、<code>short</code>、<code>long</code>、<code>long long</code>（以及无符号版本 <code>unsigned</code>）</li>
+<li><strong>浮点型</strong>：<code>float</code>、<code>double</code>、<code>long double</code></li>
+<li><strong>字符型</strong>：<code>char</code>（也有 <code>wchar_t</code> 等用于宽字符）</li>
+<li><strong>布尔型</strong>：<code>bool</code>（<code>true</code> 或 <code>false</code>）</li>
+<li><strong>字符串</strong>：<code>std::string</code>（需要包含 <code>&lt;string&gt;</code> 头文件）</li>
+</ul>
+<p>另外还有自定义类型（如结构体、类）和指针、引用等复合类型。</p>
+
+<h3 class="relative group">3. 变量的作用域
+    <div id="3-变量的作用域" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#3-%e5%8f%98%e9%87%8f%e7%9a%84%e4%bd%9c%e7%94%a8%e5%9f%9f" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>变量的作用域决定了它在程序中哪些位置可以被访问。</p>
+<ul>
+<li><strong>局部变量</strong>：在函数或代码块内声明，只能在该块内使用。</li>
+<li><strong>全局变量</strong>：在所有函数之外声明，从声明处到程序结束都可以访问。</li>
+<li><strong>静态变量</strong>：使用 <code>static</code> 关键字，在函数内部保持其值不变，但只在首次进入时初始化。</li>
+<li><strong>命名空间变量</strong>：在命名空间内定义，可被该命名空间内的代码访问。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">globalVar</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>   <span class="c1">// 全局变量
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">localVar</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c1">// 局部变量，只在 func 内有效
+</span></span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// 静态变量，多次调用 func 时 counter 会保留上次的值
+</span></span></span><span class="line"><span class="cl">    <span class="n">counter</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+
+<h3 class="relative group">4. 变量的 <code>auto</code> 类型推导
+    <div id="4-变量的-auto-类型推导" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#4-%e5%8f%98%e9%87%8f%e7%9a%84-auto-%e7%b1%bb%e5%9e%8b%e6%8e%a8%e5%af%bc" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>C++11 起，可以使用 <code>auto</code> 关键字让编译器根据初始值自动推导变量类型：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>       <span class="c1">// number 是 int
+</span></span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>         <span class="c1">// pi 是 double
+</span></span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">name</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="s">&#34;Alice&#34;</span><span class="p">);</span> <span class="c1">// name 是 std::string
+</span></span></span></code></pre></div></div>
+<p><code>auto</code> 让代码更简洁，尤其是在处理复杂类型时。</p>
+
+<h2 class="relative group">二、常量（Constant）
+    <div id="二常量constant" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%ba%8c%e5%b8%b8%e9%87%8fconstant" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>常量是值在程序运行期间不能被修改的量。它也是命名内存区域，但一旦初始化，值就不能改变。常量让程序更清晰，也避免误修改。</p>
+
+<h3 class="relative group">1. <code>const</code> 关键字
+    <div id="1-const-关键字" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#1-const-%e5%85%b3%e9%94%ae%e5%ad%97" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>最常用的定义常量的方式是使用 <code>const</code>：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">MAX_SIZE</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">double</span> <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.1415926</span><span class="p">;</span></span></span></code></pre></div></div>
+<ul>
+<li>声明 <code>const</code> 变量时必须初始化。</li>
+<li>任何试图修改 <code>const</code> 变量的操作都会导致编译错误。</li>
+</ul>
+
+<h3 class="relative group">2. <code>constexpr</code> 关键字（C++11 引入）
+    <div id="2-constexpr-关键字c11-引入" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#2-constexpr-%e5%85%b3%e9%94%ae%e5%ad%97c11-%e5%bc%95%e5%85%a5" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p><code>constexpr</code> 用于声明<strong>编译期常量</strong>，即它的值在编译时就能计算得到。它比 <code>const</code> 更强，因为 <code>constexpr</code> 变量必须用常量表达式初始化，并且编译器会验证。适合用于数组大小、模板参数等需要编译期值的地方。</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">constexpr</span> <span class="kt">int</span> <span class="n">SQUARE</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span>       <span class="c1">// 编译期可知
+</span></span></span><span class="line"><span class="cl"><span class="k">constexpr</span> <span class="kt">int</span> <span class="n">FACTORIAL_5</span> <span class="o">=</span> <span class="mi">120</span><span class="p">;</span>    <span class="c1">// 直接给字面量
+</span></span></span></code></pre></div></div>
+<p>注意：<code>const</code> 变量可能是编译期常量，也可能是运行期才确定但之后不变。<code>constexpr</code> 则强制是编译期常量。</p>
+
+<h3 class="relative group">3. 宏定义 <code>#define</code>
+    <div id="3-宏定义-define" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#3-%e5%ae%8f%e5%ae%9a%e4%b9%89-define" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>这是 C 语言风格的常量定义，使用预处理器指令：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define MAX_LENGTH 1024</span></span></span></code></pre></div></div>
+<p>它实际上是在编译前进行文本替换，不占用内存，也没有类型检查。虽然仍可使用，但现代 C++ 建议用 <code>const</code> 或 <code>constexpr</code> 代替，因为后者有类型安全且遵循作用域规则。</p>
+
+<h3 class="relative group">4. 枚举常量
+    <div id="4-枚举常量" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#4-%e6%9e%9a%e4%b8%be%e5%b8%b8%e9%87%8f" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>使用 <code>enum</code>（枚举）定义一组命名的整数常量：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">enum</span> <span class="nc">Color</span> <span class="p">{</span> <span class="n">RED</span><span class="p">,</span> <span class="n">GREEN</span><span class="p">,</span> <span class="n">BLUE</span> <span class="p">};</span></span></span></code></pre></div></div>
+<p><code>RED</code> 默认值为 0，<code>GREEN</code> 为 1，<code>BLUE</code> 为 2。也可以指定：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">enum</span> <span class="nc">Status</span> <span class="p">{</span> <span class="n">OK</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">NOT_FOUND</span> <span class="o">=</span> <span class="mi">404</span><span class="p">,</span> <span class="n">ERROR</span> <span class="o">=</span> <span class="mi">500</span> <span class="p">};</span></span></span></code></pre></div></div>
+<p>C++11 还提供了 <code>enum class</code>，更加类型安全：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">enum</span> <span class="k">class</span> <span class="nc">Color</span> <span class="p">{</span> <span class="n">RED</span><span class="p">,</span> <span class="n">GREEN</span><span class="p">,</span> <span class="n">BLUE</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 使用时需要 Color::RED
+</span></span></span></code></pre></div></div>
+
+<h3 class="relative group">5. 字面量常量
+    <div id="5-字面量常量" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#5-%e5%ad%97%e9%9d%a2%e9%87%8f%e5%b8%b8%e9%87%8f" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>直接写在代码中的值，如 <code>42</code>、<code>3.14</code>、<code>'A'</code>、<code>&quot;hello&quot;</code> 都是字面量，它们本身就是常量。</p>
+
+<h2 class="relative group">三、变量与常量的区别总结
+    <div id="三变量与常量的区别总结" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e4%b8%89%e5%8f%98%e9%87%8f%e4%b8%8e%e5%b8%b8%e9%87%8f%e7%9a%84%e5%8c%ba%e5%88%ab%e6%80%bb%e7%bb%93" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<table>
+	<thead>
+			<tr>
+					<th></th>
+					<th>变量</th>
+					<th>常量</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>值可变性</td>
+					<td>可以改变</td>
+					<td>初始化后不可改变</td>
+			</tr>
+			<tr>
+					<td>声明方式</td>
+					<td><code>int x;</code></td>
+					<td><code>const int x = 5;</code></td>
+			</tr>
+			<tr>
+					<td>用途</td>
+					<td>存储动态数据</td>
+					<td>存储固定值或配置参数</td>
+			</tr>
+			<tr>
+					<td>内存</td>
+					<td>通常分配内存</td>
+					<td>可能分配内存（编译期常量也可能优化）</td>
+			</tr>
+	</tbody>
+</table>
+
+<h2 class="relative group">四、最佳实践建议
+    <div id="四最佳实践建议" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%e5%9b%9b%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5%e5%bb%ba%e8%ae%ae" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ol>
+<li>现代 C++ 中，优先使用 <code>constexpr</code> 定义编译期常量。</li>
+<li>避免使用 <code>#define</code> 定义常量，因为它没有类型检查，容易引发错误。</li>
+<li>常量命名一般用全大写加下划线，如 <code>MAX_BUFFER_SIZE</code>；变量命名用驼峰或下划线风格。</li>
+<li>尽量在声明变量时初始化，避免使用未初始化的局部变量。</li>
+<li>使用 <code>auto</code> 合理简化类型声明，但不要过度使用。</li>
+</ol>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/hugo-site/cppnote/chapter-3/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Chapter-3 标识符和关键字
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2026-08-27T00:00:00&#43;00:00">27 August 2026</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+            <a
+              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/hugo-site/cppnote/chapter-1/">
+              <span class="leading-6">
+                Chapter-1 变量&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+              </span>
+            </a>
+            
+              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2026-08-27T00:00:00&#43;00:00">27 August 2026</time>
+              </span>
+            
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2026
+          
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Search"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="/hugo-site/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          aria-label="Search"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+    
+    
+  </body>
+  
+</html>

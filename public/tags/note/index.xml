@@ -1,38 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Note on Blowfish</title>
-		<link>https://tsanchingkim.github.io/hugo-site/tags/note/</link>
-		<description>Recent content in Note on Blowfish</description>
-		<generator>Hugo</generator>
-		<language>en</language>
-		
-		
-		
-		
-			<lastBuildDate>Thu, 27 Aug 2026 00:00:00 +0000</lastBuildDate>
-		
-			<atom:link href="https://tsanchingkim.github.io/hugo-site/tags/note/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Chapter-1 变量</title>
-				<link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-1/</link>
-				<pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
-				<guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-1/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Chapter-2 变量</title>
-				<link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/</link>
-				<pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
-				<guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Chapter-3 标识符和关键字</title>
-				<link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-3/</link>
-				<pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
-				<guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-3/</guid>
-				<description></description>
-			</item>
-	</channel>
+  <channel>
+    <title>Note on Blowfish</title>
+    <link>https://tsanchingkim.github.io/hugo-site/tags/note/</link>
+    <description>Recent content in Note on Blowfish</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Thu, 27 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tsanchingkim.github.io/hugo-site/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Chapter-1 变量</title>
+      <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-1/</link>
+      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-1/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Chapter-2 变量</title>
+      <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/</link>
+      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Chapter-3 标识符和关键字</title>
+      <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-3/</link>
+      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-3/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
 </rss>
