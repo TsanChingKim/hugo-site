@@ -1,5 +1,5 @@
-/* 让 profile 头部整体下移 */
-article > header.flex.flex-col.items-center {
-  margin-top: 10rem !important;
+/* 调整 profile 首页个人信息区块整体下移 */
+article.flex.flex-col.items-center.justify-center {
+  margin-top: 12rem !important;
 }
 
