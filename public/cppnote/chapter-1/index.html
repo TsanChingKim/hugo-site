@@ -895,6 +895,181 @@
       
       
       
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents" aria-label="Table of Contents">
+  <ul>
+    <li><a href="#一整型integer-types">一、整型（Integer Types）</a></li>
+    <li><a href="#二浮点型floating-point-types">二、浮点型（Floating-Point Types）</a></li>
+    <li><a href="#三字符类型character-types">三、字符类型（Character Types）</a></li>
+    <li><a href="#四布尔型boolean-type">四、布尔型（Boolean Type）</a></li>
+    <li><a href="#五空类型void-type">五、空类型（Void Type）</a></li>
+    <li><a href="#六类型修饰符">六、类型修饰符</a></li>
+    <li><a href="#七类型大小与最小范围">七、类型大小与最小范围</a></li>
+    <li><a href="#八类型转换">八、类型转换</a>
+      <ul>
+        <li><a href="#1-隐式转换自动发生">1. 隐式转换（自动发生）</a></li>
+        <li><a href="#2-显式转换">2. 显式转换</a></li>
+        <li><a href="#3-列表初始化c11-起">3. 列表初始化（C++11 起）</a></li>
+      </ul>
+    </li>
+    <li><a href="#九类型推导auto-与-decltype">九、类型推导：<code>auto</code> 与 <code>decltype</code></a></li>
+    <li><a href="#十如何选择合适的基本类型">十、如何选择合适的基本类型？</a></li>
+    <li><a href="#十一常见陷阱">十一、常见陷阱</a></li>
+    <li><a href="#十二现代-c-中的补充">十二、现代 C++ 中的补充</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContentsMobile" aria-label="Table of Contents">
+  <ul>
+    <li><a href="#一整型integer-types">一、整型（Integer Types）</a></li>
+    <li><a href="#二浮点型floating-point-types">二、浮点型（Floating-Point Types）</a></li>
+    <li><a href="#三字符类型character-types">三、字符类型（Character Types）</a></li>
+    <li><a href="#四布尔型boolean-type">四、布尔型（Boolean Type）</a></li>
+    <li><a href="#五空类型void-type">五、空类型（Void Type）</a></li>
+    <li><a href="#六类型修饰符">六、类型修饰符</a></li>
+    <li><a href="#七类型大小与最小范围">七、类型大小与最小范围</a></li>
+    <li><a href="#八类型转换">八、类型转换</a>
+      <ul>
+        <li><a href="#1-隐式转换自动发生">1. 隐式转换（自动发生）</a></li>
+        <li><a href="#2-显式转换">2. 显式转换</a></li>
+        <li><a href="#3-列表初始化c11-起">3. 列表初始化（C++11 起）</a></li>
+      </ul>
+    </li>
+    <li><a href="#九类型推导auto-与-decltype">九、类型推导：<code>auto</code> 与 <code>decltype</code></a></li>
+    <li><a href="#十如何选择合适的基本类型">十、如何选择合适的基本类型？</a></li>
+    <li><a href="#十一常见陷阱">十一、常见陷阱</a></li>
+    <li><a href="#十二现代-c-中的补充">十二、现代 C++ 中的补充</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+          </div>
+        </div>
+      
 
 
       <div class="min-w-0 min-h-0 max-w-fit">
