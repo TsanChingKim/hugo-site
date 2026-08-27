@@ -1,4 +1,4 @@
 baseURL = 'https://tsanchingkim.github.io/hugo-site/'
 locale = 'en-us'
-title = 'My New Hugo Project'
+title = 'TsanChing Kim Blog'
 theme = "blowfish"
