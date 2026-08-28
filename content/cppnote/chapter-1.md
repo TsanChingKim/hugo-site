@@ -1,6 +1,6 @@
 ---
 title: "Chapter-1 基本数据类型"
-date: 2026-08-27
+date: 2026-08-28
 description: "详细讲解c++变量的笔记"
 tags: ["note", "c++"]
 showTableOfContents: true

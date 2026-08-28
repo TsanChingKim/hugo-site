@@ -1,6 +1,6 @@
 ---
 title: "Chapter-2 变量"
-date: 2026-08-27
+date: 2026-08-28
 description: "讲解了c++中变量相关的内容"
 tags: ["note", "c++"]
 showTableOfContents: true

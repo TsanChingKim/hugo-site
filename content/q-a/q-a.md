@@ -1,6 +1,6 @@
 ---
-title: "2026-8-20"
-date: 2026-08-27
+title: "Auto Using Point"
+date: 2026-08-28
 description: "在进行c++开发过程中遇到的auto类型问题"
 tags: ["q&a"]
 showTableOfContents: true
