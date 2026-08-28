@@ -170,6 +170,16 @@
   
   
 
+  
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/hugo-site/js/mermaid.bundle.be91c1c372a718ded094d08a45edf5d3e2ad80305b9b025ee259b160f5abf08607ef917b3827ac19a21233c77aa96cd5636b5725f419561b5997894daa429f56.js"
+    integrity="sha512-vpHBw3KnGN7QlNCKRe310&#43;KtgDBbmwJe4lmxYPWr8IYH75F7OCesGaISM8d6qWzVY2tXJfQZVhtZl4lNqkKfVg=="></script>
+
 
 
 
@@ -297,7 +307,7 @@
     "keywords": ["c++","boost","q\u0026a"],
     
     "mainEntityOfPage": "https://tsanchingkim.github.io/hugo-site/q-a/q-a/mutexlock/",
-    "wordCount":  219 
+    "wordCount":  259 
   }]
   </script>
 
@@ -803,7 +813,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-08-28T00:00:00&#43;00:00">28 August 2026</time><span class="px-2 text-primary-500">&middot;</span><span>219 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <time datetime="2026-08-28T00:00:00&#43;00:00">28 August 2026</time><span class="px-2 text-primary-500">&middot;</span><span>259 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1206,6 +1216,24 @@
 </span></span><span class="line"><span class="cl">  <span class="c1">// 如果同一个线程再次加锁
 </span></span></span><span class="line"><span class="cl">  <span class="n">boost</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">boost</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lock2</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>	<span class="c1">// 错误
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>普通互斥量的内部逻辑是这样的：</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">lock</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">try_lock</span><span class="p">())</span> <span class="k">return</span><span class="p">;</span>   <span class="c1">// CAS: 把标志位 0→1，成功则拿到锁
+</span></span></span><span class="line"><span class="cl">        <span class="c1">// 标志位已经是 1 → 阻塞当前线程，进入睡眠，等待被唤醒
+</span></span></span><span class="line"><span class="cl">        <span class="n">block_and_wait</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>使用现实中的动作来进行类比的话，将lock（加锁）视为拿钥匙，将unlock（释放锁）视为放下钥匙。当一个人拿起钥匙（lock）来开门之后，在放下钥匙之前，它再次去拿钥匙，它只知道有人拿了钥匙，并不知道钥匙就在自己的手里，所以它会持续等待拿了要是的人把钥匙放回来，就导致这个程序阻塞了。</p>
+<pre class="not-prose mermaid">
+graph TD
+	A[拿取钥匙] --> B[开门]
+  B --> D[自己又去拿钥匙]
+  D --> E["发现钥匙不在，等待那要是的人将钥匙拿回来"]
+  E --> E
+  E -.-> F[放下钥匙]
+</pre>
+
 
 <h3 class="relative group">2.递归互斥量
     <div id="2递归互斥量" class="anchor"></div>
@@ -1383,14 +1411,14 @@
 			<tr>
 					<td style="text-align: center"><code>std::scoped_lock</code>（C++17）</td>
 					<td style="text-align: center">可同时锁多个互斥量</td>
-					<td style="text-align: center">防止思索地多锁场景</td>
+					<td style="text-align: center">防止死锁的多锁场景</td>
 			</tr>
 	</tbody>
 </table>
 <blockquote class="is-danger"><p>注意：
 1.递归互斥量有额外的性能开销，因为需要追踪的所有者和加锁次数。如果并不需要递归加锁，<strong>尽量使用普通互斥量</strong>。
 2.每个<code>scoped_lock</code>对象控制一个锁的持有时间。不要在函数中间手动<code>unlock</code>（除非使用<code>unique_lock</code>），否则容易出错。
-3.虽然<code>recursive_mutex</code>避免了&quot;同一线程重复加锁&quot;的死锁，=但仍可能与其他锁产生<strong>交叉等待死锁。</strong>
+3.虽然<code>recursive_mutex</code>避免了&quot;同一线程重复加锁&quot;的死锁，但仍可能与其他锁产生<strong>交叉等待死锁。</strong>
 4.即使是递归锁，也建议尽量缩小临界区，避免在持锁时进行耗时操作（如IO），以提高并发性。
 5.常见的错误是忘记用花括号限制作用域，导致锁提前释放。</p>
 </blockquote>
