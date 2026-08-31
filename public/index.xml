@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 TsanChing Kim</copyright>
-    <lastBuildDate>Fri, 28 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tsanchingkim.github.io/hugo-site/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tsanchingkim.github.io/hugo-site/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>2026-8-24</title>
       <link>https://tsanchingkim.github.io/hugo-site/developmentmode/developmentmode/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/developmentmode/developmentmode/</guid>
       <description></description>
@@ -20,11 +20,11 @@
     </item>
     
     <item>
-      <title>Auto Using Point</title>
-      <link>https://tsanchingkim.github.io/hugo-site/q-a/q-a/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <title>c&#43;&#43;中的类型转换</title>
+      <link>https://tsanchingkim.github.io/hugo-site/q-a/-/</link>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://tsanchingkim.github.io/hugo-site/q-a/q-a/</guid>
+      <guid>https://tsanchingkim.github.io/hugo-site/q-a/-/</guid>
       <description></description>
       
     </item>
@@ -32,7 +32,7 @@
     <item>
       <title>Chapter-1 基本数据类型</title>
       <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-1/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-1/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Chapter-2 变量</title>
       <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/</guid>
       <description></description>
@@ -52,7 +52,7 @@
     <item>
       <title>Chapter-3 标识符和关键字</title>
       <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-3/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-3/</guid>
       <description></description>
@@ -62,7 +62,7 @@
     <item>
       <title>Chapter-4 运算符</title>
       <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-4/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-4/</guid>
       <description></description>
@@ -72,7 +72,7 @@
     <item>
       <title>Mutex Lock</title>
       <link>https://tsanchingkim.github.io/hugo-site/q-a/q-a/mutexlock/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/q-a/q-a/mutexlock/</guid>
       <description></description>
@@ -82,9 +82,19 @@
     <item>
       <title>visible this</title>
       <link>https://tsanchingkim.github.io/hugo-site/q-a/2026-8-27/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/q-a/2026-8-27/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>使用Auto类型的优缺点</title>
+      <link>https://tsanchingkim.github.io/hugo-site/q-a/q-a/</link>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://tsanchingkim.github.io/hugo-site/q-a/q-a/</guid>
       <description></description>
       
     </item>

@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 TsanChing Kim</copyright>
-    <lastBuildDate>Fri, 28 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tsanchingkim.github.io/hugo-site/cppnote/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tsanchingkim.github.io/hugo-site/cppnote/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Chapter-1 基本数据类型</title>
       <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-1/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-1/</guid>
       <description></description>
@@ -22,7 +22,7 @@
     <item>
       <title>Chapter-2 变量</title>
       <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-2/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>Chapter-3 标识符和关键字</title>
       <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-3/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-3/</guid>
       <description></description>
@@ -42,7 +42,7 @@
     <item>
       <title>Chapter-4 运算符</title>
       <link>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-4/</link>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       
       <guid>https://tsanchingkim.github.io/hugo-site/cppnote/chapter-4/</guid>
       <description></description>
