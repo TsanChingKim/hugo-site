@@ -1,8 +1,8 @@
 ---
 title: "Mutex Lock"
-date: 2026-08-28
+date: 2026-08-31
 description: "详细讲解了Mutex锁的概念及使用"
-tags: ["c++", "boost", "q&a"]
+tags: ["boost", "c++", "q&a"]
 showTableOfContents: true
 ---
 

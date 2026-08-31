@@ -1,6 +1,6 @@
 ---
-title: "Auto Using Point"
-date: 2026-08-28
+title: "使用Auto类型的优缺点"
+date: 2026-08-31
 description: "在进行c++开发过程中遇到的auto类型问题"
 tags: ["q&a"]
 showTableOfContents: true

@@ -1,6 +1,6 @@
 ---
 title: "Chapter-3 标识符和关键字"
-date: 2026-08-28
+date: 2026-08-31
 description: "详细介绍了c++中的标识符和关键字相关的内容"
 tags: ["c++", "note"]
 showTableOfContents: true
